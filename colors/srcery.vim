@@ -35,7 +35,7 @@ let s:bright_cyan    = ["#34BEDA", 14]
 let s:white          = ["#FCE8C3", 15]
 
 " default xterm colors.
-let s:orange        = ['#D75F00', 166]  
+let s:orange        = ['#D75F00', 166]
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#080808', 232]
 let s:gray_alt      = ['#4E4E4E', 239]
@@ -180,9 +180,9 @@ if version >= 700
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:black, s:black)
+  call s:HL('TabLineFill', s:bright_black, s:black)
   " Active tab page label
-  call s:HL('TabLineSel', s:black, s:black, s:bold)
+  call s:HL('TabLineSel', s:black, s:bright_black, '')
   " Not active tab page label
   hi! link TabLine TabLineFill
 
@@ -192,7 +192,7 @@ endif
 
 if version >= 703
   " Highlighted screen columns
-  call s:HL('ColorColumn',  s:none, s:black)
+  call s:HL('ColorColumn', s:bright_black, s:bright_black)
 
   " Concealed element: \lambda → λ
   call s:HL('Conceal', s:blue, s:none)
