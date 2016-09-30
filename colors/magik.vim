@@ -192,7 +192,7 @@ endif
 
 if version >= 703
   " Highlighted screen columns
-  call s:HL('ColorColumn', s:bright_black, s:bright_black)
+  call s:HL('ColorColumn', '', s:bright_black)
 
   " Concealed element: \lambda → λ
   call s:HL('Conceal', s:blue, s:none)
