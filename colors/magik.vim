@@ -17,7 +17,7 @@ endif
 
 " Palette {{{
 
-let s:black          = ["#1C1B19", 0]
+let s:black          = ["#16161B", 0]
 let s:red            = ["#FF3128", 1]
 let s:green          = ["#519F50", 2]
 let s:yellow         = ["#FBB829", 3]
@@ -25,7 +25,7 @@ let s:blue           = ["#5573A3", 4]
 let s:magenta        = ["#E02C6D", 5]
 let s:cyan           = ["#1693A5", 6]
 let s:gray           = ["#918175", 7]
-let s:bright_black   = ["#2D2C29", 8]
+let s:bright_black   = ["#2D2B28", 8]
 let s:bright_red     = ["#DA4939", 9]
 let s:bright_green   = ["#98BC37", 10]
 let s:bright_yellow  = ["#FFC66D", 11]
@@ -38,7 +38,7 @@ let s:white          = ["#FCE8C3", 15]
 let s:orange        = ['#D75F00', 166]
 let s:bright_orange = ['#FF8700', 208]
 let s:hard_black    = ['#080808', 232]
-let s:gray_alt      = ['#4E4E4E', 239]
+let s:gray_alt      = ['#4E4E4E', 7]
 
 "}}}
 " Setup Variables: {{{
@@ -158,6 +158,7 @@ call s:HL('SrceryBrightYellow', s:bright_yellow, s:none)
 call s:HL('SrceryBrightBlue', s:bright_blue, s:none)
 call s:HL('SrceryBrightMagenta', s:bright_magenta, s:none)
 call s:HL('SrceryBrightCyan', s:bright_cyan, s:none)
+call s:HL('SrceryBrightBlack', s:bright_black, s:none)
 
 " special
 call s:HL('SrceryOrange', s:orange)
@@ -180,9 +181,9 @@ if version >= 700
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:bright_black, s:black)
+  call s:HL('TabLineFill', s:green, s:black)
   " Active tab page label
-  call s:HL('TabLineSel', s:black, s:bright_black, '')
+  call s:HL('TabLineSel', s:white, s:green, '')
   " Not active tab page label
   hi! link TabLine TabLineFill
 
@@ -198,17 +199,17 @@ if version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:black)
+  call s:HL('CursorLineNr', s:blue, s:black)
 endif
 
-hi! link NonText SrceryGrayAlt
-hi! link SpecialKey SrceryGrayAlt
+hi! link NonText SrceryBrightBlack
+hi! link SpecialKey SrceryBrightBlack
 
 call s:HL('Visual',    s:none,  s:black, s:inverse)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:black, s:yellow)
-call s:HL('IncSearch', s:black, s:yellow)
+call s:HL('Search',    s:black, s:bright_yellow)
+call s:HL('IncSearch', s:black, s:bright_yellow)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
@@ -216,7 +217,7 @@ call s:HL('StatusLine',   s:white, s:bright_black)
 call s:HL('StatusLineNC', s:gray, s:black, s:underline)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:white, s:black)
+call s:HL('VertSplit', s:bright_black, s:black)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', s:blue, s:black, s:bold)
@@ -319,13 +320,13 @@ hi! link Number SrceryBrightMagenta
 hi! link Float SrceryBrightMagenta
 
 " Generic type
-hi! link Type SrceryYellow
+hi! link Type SrceryBrightYellow
 " static, register, volatile, etc
 hi! link StorageClass SrceryOrange
 " struct, union, enum, etc.
 hi! link Structure SrceryCyan
 " typedef
-hi! link Typedef SrceryYellow
+hi! link Typedef SrceryBrightYellow
 
 " }}}
 " Completion Menu: {{{
