@@ -10,6 +10,10 @@ if version > 580
   endif
 endif
 
+if &diff  " disable syntax highlighting in diff mode
+  syntax off
+endif
+
 let g:colors_name='magik'
 
 if !has('gui_running') && &t_Co != 256
@@ -366,10 +370,10 @@ endif
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:black)
-call s:HL('DiffAdd',    s:green, s:black)
-call s:HL('DiffChange', s:cyan, s:black)
-call s:HL('DiffText',   s:yellow, s:black)
+call s:HL('DiffDelete', s:black, s:bright_red)
+call s:HL('DiffAdd',    s:black, s:bright_green)
+call s:HL('DiffChange', s:bright_white, s:black)
+call s:HL('DiffText',   s:black, s:yellow, s:bold)
 
 " }}}
 " Spelling: {{{
